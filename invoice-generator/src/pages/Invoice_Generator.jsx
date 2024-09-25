@@ -47,7 +47,7 @@ const App = () => {
     };
 
     const fetchInvoices = async () => {
-        const res = await axios.get('http://localhost:5000/invoices');
+        const res = await axios.get('https://invoice-generator-azxf.onrender.com/invoices');
         // Handle fetched invoices (not used in this code)
     };
 
@@ -55,7 +55,7 @@ const App = () => {
     //     const formData = new FormData();
     //     formData.append('image', e.target.files[0]);
 
-    //     const res = await axios.post('http://localhost:5000/upload', formData, {
+    //     const res = await axios.post('https://invoice-generator-azxf.onrender.comupload', formData, {
     //         headers: {
     //             'Content-Type': 'multipart/form-data',
     //         },
@@ -67,13 +67,13 @@ const App = () => {
     const onSubmit = async (data) => {
         try {
             // Create the invoice
-             const res = await axios.post('http://localhost:5000/invoices', data);
+             const res = await axios.post('https://invoice-generator-azxf.onrender.com/invoices', data);
             
             // // Prepare the PDF URL for download
             console.log("res",res.data._id);
-            const res2 = await axios.get(`http://localhost:5000/invoices/pdf/${res.data._id}`,{params:{data:data}})
+            const res2 = await axios.get(`https://invoice-generator-azxf.onrender.com/invoices/pdf/${res.data._id}`,{params:{data:data}})
             console.log("res2",res2);
-            const pdfUrl = `http://localhost:5000/downloadfile/${res.data._id}`;
+            const pdfUrl = `https://invoice-generator-azxf.onrender.com/downloadfile/${res.data._id}`;
             console.log(pdfUrl);
             window.open(pdfUrl, '_blank');
             // Create an invisible link to trigger download
