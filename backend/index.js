@@ -144,7 +144,7 @@ app.get('/invoices/pdf/:id', async (req, res) => {
   doc.moveDown();
   
   // Place of supply
-  doc.fontSize(12).text(`Place of Supply: `);
+  // doc.fontSize(12).text(`Place of Supply: `);
   doc.moveDown();
   
   // Table headers
