@@ -99,7 +99,7 @@ const App = () => {
 
     return (
         <div className="container mx-auto p-5">
-            <h1 className="text-2xl font-bold mb-5">Invoice Generator</h1>
+            <h1 className="text-2xl font-bold mb-5 bg-black p-4 text-white">Invoice Generator</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded p-6">
                 <input
                     type="text"
